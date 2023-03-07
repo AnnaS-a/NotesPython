@@ -29,4 +29,22 @@ class Controller(object):
         self.model.update_note(note_id, note)
         self.view.display_note_updated(note_id)
 
+    def show_note(self, note_id):
+        try:
+            note = self.model.read_note(note_id)
+            self.view.show_note(note)
+        except ValueError:
+            self.view.display_note_id_not_exist(note_id)
+
+    def delete_note(self, note_id):
+        try:
+            self.model.delete_note(note_id)
+            self.view.display_note_deletion(note_id)
+        except ValueError:
+            self.view.display_note_id_not_exist(note_id)
+
+    
+
+    
+
     

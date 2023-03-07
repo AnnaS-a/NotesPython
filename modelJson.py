@@ -47,4 +47,14 @@ class ModelJson(object):
             return notes_list
         except ValueError:
             return self.notes
-        
+    
+    def update_note(self, search_id, note):
+        self.notes = self.read_notes()
+        for item in self.notes:
+            if item.note_id == search_id:
+                item.date = note.date
+                item.title = note.title
+                item.text = note.text
+
+        self.write_json(self.notes)
+    

@@ -33,6 +33,22 @@ def run():
                 updated_id = int(get_number())
                 if c.note_id_exist(updated_id):
                     c.update_note(updated_id, get_note_data())
+        
+        elif command == '3':
+            print(Fore.GREEN + '\nПрочитать заметку:' + Style.RESET_ALL)
+            if c.notes_exist():
+                c.show_note(int(get_number()))
+
+        elif command == '4':
+            if c.notes_exist():
+                print(Fore.RED + '\nУдалить заметку:' + Style.RESET_ALL)
+                delete_id = int(get_number())
+                if c.note_id_exist(delete_id):
+                    c.delete_note(delete_id)
+
+        
+
+
 
         
 def get_note_data():

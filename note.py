@@ -40,4 +40,4 @@ class Note(object):
 
     def __str__(self):
         return f'\nЗаметка: {self._note_id}\nДата создания(редактирования):' \
-               f' {self._date}\nЗаголовок: {self._title}\nТело: {self._text}\n '
+               f' {self._date}\nЗаголовок: {self._title}\nСодержание: {self._text}\n '

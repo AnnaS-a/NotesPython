@@ -43,6 +43,16 @@ class Controller(object):
         except ValueError:
             self.view.display_note_id_not_exist(note_id)
 
+    def show_notes(self):
+        notes = self.model.read_notes()
+        self.view.show_number_point_list(notes)
+
+    def delete_all_notes(self):
+        self.model.delete_all_notes()
+        self.view.display_all_notes_deletion()
+
+
+
     
 
     

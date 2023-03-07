@@ -2,12 +2,12 @@ import datetime
 from colorama import Fore, Style
 
 from controller import Controller
-from modelJson import ModelJson
+from model import Model
 from view import View
 from note import Note
 
 def run():
-    c = Controller(ModelJson("notes.json"), View())
+    c = Controller(Model("notes.json"), View())
 
     while True:
         command = input(Fore.YELLOW +'создать заметку - 1\n'

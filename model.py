@@ -3,7 +3,7 @@ import view
 from note import Note
 
 
-class ModelJson(object):
+class Model(object):
 
     def __init__(self, filename):
         self.filename = filename
